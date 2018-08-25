@@ -1,13 +1,13 @@
 package Model;
 
 public class Assalariado extends Empregado {
-    private double salarioHorario;
+    private double salario;
 
-    public void setSalarioHorario(double salarioHorario) {
-        this.salarioHorario = salarioHorario;
+    public void setSalario(double salario) {
+        this.salario = salario;
     }
-    public double getSalarioHorario()
+    public double getSalario()
     {
-        return this.salarioHorario;
+        return this.salario;
     }
 }
