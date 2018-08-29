@@ -16,7 +16,8 @@ public class Main {
             System.out.println("Digite 1 para Adicionar um Empregado");
             System.out.println("Digite 2 para Listar os Empregados");
             System.out.println("Digite 3 para Deletar um Empregado");
-            System.out.println("Digite 4 para Lançar um cartao");
+            System.out.println("Digite 4 para Lançar um Cartao");
+            System.out.println("Digite 5 para Lançar uma Venda");
 
             aux = myscan.nextInt();
 
@@ -31,6 +32,7 @@ public class Main {
                 myupdater.adicionarCartao(myBd.getEmpregado(myscan.nextInt()));
 
             }
+            else if(aux == 5){ myBd.adicionarVenda(mycreater.crirarVenda());}
         }
     }
 }

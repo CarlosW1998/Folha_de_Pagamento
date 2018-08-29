@@ -1,20 +1,31 @@
 package Model;
 
+import folaha_de_pagamento.Venda;
+
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Banco {
     private ArrayList<Empregado> empregados;
-    private AtomicInteger idControl;
+    private  ArrayList<Venda> vendas;
+    private AtomicInteger idControl, controlvendas;
 
     public Banco(){
         this.empregados = new ArrayList<Empregado>();
         this.idControl = new AtomicInteger(0);
+        this.controlvendas = new AtomicInteger(0);
+        this.vendas = new ArrayList<Venda>();
     }
     public void adicionarEmpregado(Empregado E){
         E.setId(this.idControl.incrementAndGet());
         empregados.add(E);
     }
+    public  void adicionarVenda(Venda E){
+        E.setId(this.controlvendas.incrementAndGet());
+        this.vendas.add(E);
+    }
+
+
     public Empregado getEmpregado(int id){
         for(int a = 0; a < this.empregados.size(); a++) {
             if(empregados.get(a).getId() == id){

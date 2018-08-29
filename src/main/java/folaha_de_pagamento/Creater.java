@@ -61,4 +61,15 @@ public class Creater {
 
         return E;
     }
+
+    public Venda crirarVenda(){
+        System.out.print("Valor da Venda:");
+        Venda E = new Venda();
+        String aux = scan.nextLine();
+        E.setValor(Double.parseDouble(aux));
+        System.out.print("Id do Empregado que realizou a venda: ");
+        aux = scan.nextLine();
+        E.setEmpregado(Integer.parseInt(aux));
+        return  E;
+    }
 }
