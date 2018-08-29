@@ -1,11 +1,7 @@
 package folaha_de_pagamento;
 
-import Model.Assalariado;
-import Model.Comissionado;
-import Model.Empregado;
-import Model.Horista;
+import Model.*;
 
-import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.util.Scanner;
 
 public class Creater {

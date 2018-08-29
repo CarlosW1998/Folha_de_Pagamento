@@ -1,7 +1,5 @@
 package Model;
 
-import folaha_de_pagamento.Venda;
-
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
