@@ -14,13 +14,17 @@ public class Banco {
         this.controlvendas = new AtomicInteger(0);
         this.vendas = new ArrayList<Venda>();
     }
-    public void adicionarEmpregado(Empregado E){
-        E.setId(this.idControl.incrementAndGet());
+    public int adicionarEmpregado(Empregado E){
+        int aux = this.idControl.incrementAndGet();
+        E.setId(aux);
         empregados.add(E);
+        return aux;
     }
-    public  void adicionarVenda(Venda E){
-        E.setId(this.controlvendas.incrementAndGet());
+    public  int adicionarVenda(Venda E){
+        int aux = this.controlvendas.incrementAndGet();
+        E.setId(aux);
         this.vendas.add(E);
+        return aux;
     }
 
 
@@ -33,15 +37,29 @@ public class Banco {
         System.out.println("Empregado não existe");
         return null;
     }
-    public void removerEmpregado(int id){
+    public Empregado removerEmpregado(int id){
         for(int a = 0; a < this.empregados.size(); a++) {
             if(empregados.get(a).getId() == id){
+                Empregado E = empregados.get(a);
                 empregados.remove(a);
                 System.out.println("Empregao removido");
-                return;
+                return E;
             }
         }
         System.out.println("Usuario não existe");
+        return null;
+    }
+    public Venda removerVenda(int id){
+        for(int a = 0; a < this.vendas.size(); a++){
+            if(vendas.get(a).getId() == id){
+                Venda E = vendas.get(a);
+                vendas.remove(a);
+                System.out.println("Venda Removida Com Sucesso");
+                return E;
+            }
+        }
+        System.out.println("Venda não existe");
+        return null;
     }
     public void show(){
         empregados.forEach((e) -> System.out.println(e.toString()));
